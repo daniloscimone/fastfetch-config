@@ -187,7 +187,20 @@ The layout is grouped so the output stays readable on any terminal width:
 | Battery format | `{capacity} {status}` | Charge level plus charging state |
 | `colors.symbol` | `circle` | Minimal palette row |
 
-Every module is documented in the [fastfetch wiki](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration). The top of `config.jsonc` keeps a commented copy of the full default configuration as a quick reference for options you may want to turn on.
+Every module is documented in the [fastfetch wiki](https://github.com/fastfetch-cli/fastfetch/wiki/Configuration).
+
+The top of `config.jsonc` keeps a commented copy of the full default configuration as a quick reference for options you may want to turn on. It comes from:
+
+```bash
+fastfetch --gen-config-full        # every option, with its default value
+fastfetch --gen-config             # a minimal starting point
+```
+
+Both write to fastfetch's config directory, or to a path you pass as an argument. Neither one overwrites an existing file — if you already have a `config.jsonc`, fastfetch stops and tells you to use `--gen-config-full-force`. So generating a reference copy somewhere else is safe:
+
+```bash
+fastfetch --gen-config-full /tmp/fastfetch-reference.jsonc
+```
 
 ---
 
