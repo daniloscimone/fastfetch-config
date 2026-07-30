@@ -75,6 +75,19 @@ cd fastfetch-config
 .\install.ps1 -FontName Hack
 ```
 
+To pass options straight through the one-liner, add `-s --`:
+
+```bash
+curl -fsSL https://raw.githubusercontent.com/daniloscimone/fastfetch-config/main/install.sh | bash -s -- --font Hack
+```
+
+On Windows, download the script first when you need options:
+
+```powershell
+irm https://raw.githubusercontent.com/daniloscimone/fastfetch-config/main/install.ps1 -OutFile install.ps1
+.\install.ps1 -FontName Hack
+```
+
 ---
 
 ## Manual install
